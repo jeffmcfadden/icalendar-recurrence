@@ -39,6 +39,10 @@ module Icalendar
           convert_ice_cube_occurrence(occurrence)
         end
       end
+      
+      def next_occurrence
+        ice_cube_occurrences = ice_cube_schedule.next_occurrence
+      end
 
       def all_occurrences
         ice_cube_occurrences = ice_cube_schedule.all_occurrences

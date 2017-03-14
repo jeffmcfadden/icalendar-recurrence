@@ -16,9 +16,17 @@ module Icalendar
       def occurrences_between(begin_time, closing_time)
         schedule.occurrences_between(begin_time, closing_time)
       end
+      
+      def next_occurrence
+        schedule.next_occurrence
+      end
 
       def schedule
         @schedule ||= Schedule.new(self)
+      end
+
+      def recurs?
+        rrule.present? && rrule.size > 0
       end
 
       def tzid
